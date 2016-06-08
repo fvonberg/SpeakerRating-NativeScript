@@ -10,17 +10,25 @@ import {Rating} from "../../shared/rating/rating";
     templateUrl: "pages/rating/rating.html",
     styleUrls: ["pages/rating/rating.common.css"]
 })
-export class RatingPage {
+export class RatingPage implements OnInit {
 
     customerRating: string;
     talk: Talk;
     starStrings: Array<string> = ["&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;"];
+    private conferenceId: number;
+    private talkId: number;
 
     constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService) {
-        let conferenceId = Number(routeParams.get("conferenceId"));
-        let talkId = Number(routeParams.get("talkId"));
-        console.log(conferenceId + "   " + talkId);
-        this.talk = this.talkService.loadTalk(conferenceId, talkId);
+        this.conferenceId = Number(routeParams.get("conferenceId"));
+        this.talkId = Number(routeParams.get("talkId"));
+    }
+    
+    ngOnInit() {
+       this.talkService.getTalk(this.conferenceId, this.talkId)
+            .then(talk => {
+                this.talk = talk;
+            });
+       
     }
     
     starSelected(starId: number) {

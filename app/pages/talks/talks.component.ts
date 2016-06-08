@@ -18,11 +18,11 @@ export class TalksPage implements OnInit{
     }
 
     ngOnInit() {
-        this.talkList = this.talkService.getTalksForConference(this.conferenceId);
+        this.talkService.getTalksForConference(this.conferenceId)
+            .then(talks => this.talkList = talks);
     }
 
     showRating(talk: Talk) {
-        console.log("talk selected: " + talk.title);
         this.router.navigate(["Rating", { conferenceId: talk.conferenceId, talkId: talk.id }]);
     }
 }

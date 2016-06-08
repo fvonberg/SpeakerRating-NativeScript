@@ -1,29 +1,67 @@
 import {Injectable} from "@angular/core";
+import {FileReader} from "../helpers/fileReader";
 import {Talk} from "./talk";
 
 @Injectable()
 export class TalkService {
 
-    private allTalks: Array<Talk> = [];
+    constructor() {}
 
-    constructor() {
-        // Needs correct implementation
-        let talk01 = new Talk(0, 0, "https://placekitten.com/g/900/400", "Talk 1", "Lorem ipsum", "Frederik von Berg");
-        let talk02 = new Talk(1, 0, "", "Talk 2", "Lorem ipsum", "Dragan Zuvic");
-        let talk03 = new Talk(2, 0, "", "Talk 3", "Lorem ipsum", "Philipp Burgmer");
-
-        this.allTalks.push(talk01);
-        this.allTalks.push(talk02);
-        this.allTalks.push(talk03);
-    }
-
-    getTalksForConference(conferenceId: number): Array<Talk> {
-        // return correct values
-        return this.allTalks;
+    getTalksForConference(conferenceId: number): Promise<Array<Talk>> {
+        return new Promise<Array<Talk>>((resolve, reject) => {
+           try {
+               FileReader.readJSON("/data/talksData.json")
+                .then(content => {
+                    let json = <any> content;
+                    let allTalks: Array<Talk> = [];
+                    
+                    for (var index = 0; index < json.data.length; index++) {
+                        var conferenceParent = json.data[index];
+                        if(conferenceParent.conferenceId === conferenceId) {
+                            conferenceParent.talks.forEach(talk => {
+                                 allTalks.push(new Talk(talk.id, talk.conferenceId, talk.imageUrl, talk.title, talk.description, talk.author));
+                            });
+                            break;
+                        }
+                    }
+                    
+                    resolve(allTalks);
+                })
+           } catch (err) {
+               reject(err);
+           }
+        });
     }
     
-    loadTalk(conferenceId: number, talkId: number): Talk {
-        // Needs correct implementation
-        return this.allTalks[talkId];
+    getTalk(conferenceId: number, talkId: number): Promise<Talk> {
+        return new Promise<Talk>((resolve, reject) => {
+           try {
+               FileReader.readJSON("/data/talksData.json")
+                .then(content => {
+                    let json = <any> content;
+                    let talk: Talk;
+                    
+                    for (var index = 0; index < json.data.length; index++) {
+                        var conferenceParent = json.data[index];
+                        if(conferenceParent.conferenceId === conferenceId) {
+                            conferenceParent.talks.forEach(conferenceTalk => {
+                                if(conferenceTalk.id === talkId) {
+                                  talk = new Talk(conferenceTalk.id, conferenceTalk.conferenceId, conferenceTalk.imageUrl, conferenceTalk.title, conferenceTalk.description, conferenceTalk.author);
+                                }
+                            });
+                            break;
+                        }
+                    }
+                    
+                    if(talk === undefined) {
+                        reject();
+                    }
+                    
+                    resolve(talk);
+                })
+           } catch (err) {
+               reject(err);
+           }
+        });
     }
 }

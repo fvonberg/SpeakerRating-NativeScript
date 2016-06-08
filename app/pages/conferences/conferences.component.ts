@@ -15,7 +15,8 @@ export class ConferencesPage implements OnInit{
     constructor(private conferenceService: ConferenceService, private router: Router) {}
     
     ngOnInit() {
-        this.conferenceList = this.conferenceService.getAllConferences();
+        this.conferenceService.getAllConferences()
+            .then(conferences => this.conferenceList = conferences);
     }
     
     showTalks(conference: Conference) {

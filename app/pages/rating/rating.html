@@ -1,8 +1,8 @@
 <ScrollView>
     <StackLayout>
         <Image src="~/images/default_placeholder_image.png" class="cardViewImage"></Image>
-        <Label [text]="talk.title" class="cardViewItems cardViewHeading"></Label>
-        <Label [text]="talk.author" class="cardViewItems cardViewContent"></Label>
+        <Label [text]="talk?.title" class="cardViewItems cardViewHeading"></Label>
+        <Label [text]="talk?.author" class="cardViewItems cardViewContent"></Label>
     
         <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
             <Button text="&#xf005;" (tap)="starSelected(0)" class="rating-button"></Button>
