@@ -1,0 +1,39 @@
+.bgColor {
+  background-color: #dfdfdf;  
+}
+
+.listView {
+  padding: 10;
+}
+
+.cardView {
+  margin-bottom: 10;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.cardViewImage {
+  border: none;
+}
+
+.cardViewItems {
+  margin: 10;
+  color: #666666;
+}
+
+.cardViewHeading {
+  font-size: 22;
+  font-weight: bold;
+}
+
+.cardViewContent {
+  font-size: 14;
+}
+
+.cardViewButton {
+  horizontal-align: right;
+}
+
+.font-awesome {
+    font-family: fontawesome-webfont;
+}

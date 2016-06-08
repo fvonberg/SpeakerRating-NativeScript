@@ -1,0 +1,1 @@
+# SpeakerRating-NativeScript

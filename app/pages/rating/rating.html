@@ -1,0 +1,19 @@
+<ScrollView>
+    <StackLayout>
+        <Image src="~/images/default_placeholder_image.png" class="cardViewImage"></Image>
+        <Label [text]="talk.title" class="cardViewItems cardViewHeading"></Label>
+        <Label [text]="talk.author" class="cardViewItems cardViewContent"></Label>
+    
+        <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
+            <Button text="&#xf005;" (tap)="starSelected(0)" class="rating-button"></Button>
+            <Button text="&#xf005;" (tap)="starSelected(1)" class="rating-button"></Button>
+            <Button text="&#xf005;" (tap)="starSelected(2)" class="rating-button"></Button>
+            <Button text="&#xf005;" (tap)="starSelected(3)" class="rating-button"></Button>
+            <Button text="&#xf005;" (tap)="starSelected(4)" class="rating-button"></Button>
+        </StackLayout>
+        
+        <TextView hint="Whats your opinion?" ([ngModel])="customerRating"></TextView>
+        
+        <Button (tap)="saveInput()"></Button>
+    </StackLayout>
+</ScrollView>

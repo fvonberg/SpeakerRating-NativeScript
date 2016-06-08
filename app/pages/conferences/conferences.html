@@ -1,0 +1,14 @@
+<StackLayout class="bgColor">
+    
+    <ListView [items]="conferenceList">
+        <template let-item="item">
+            <StackLayout class="cardView">
+                <Image src="~/images/default_placeholder_image.png" class="cardViewImage"></Image>
+                <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
+                <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>
+                <Button class="cardViewItems cardViewButton" (tap)="showTalks(item)" text="TO TALK OVERVIEW!"></Button>
+            </StackLayout>
+        </template>
+    </ListView>
+    
+</StackLayout>

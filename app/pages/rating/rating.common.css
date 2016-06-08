@@ -1,0 +1,12 @@
+.stars {
+    horizontal-align: center;
+}
+
+.rating-button {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #808080;
+    font-size: 16;
+    width: 40;
+}
