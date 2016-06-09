@@ -1,9 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {Router, RouteParams} from "@angular/router-deprecated";
 import {TextView} from "ui/text-view";
+import * as Dialog from "ui/dialogs";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
-import {Rating} from "../../shared/rating/rating";
 
 @Component({
     selector: "rating",
@@ -12,12 +12,13 @@ import {Rating} from "../../shared/rating/rating";
 })
 export class RatingPage implements OnInit {
 
-    customerRating: string;
+    customerRating: string = "";
     talk: Talk;
     starStrings: Array<string> = ["&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;"];
     private conferenceId: number;
     private talkId: number;
     buttonActive: Array<boolean> = [true, true, true, true, true];
+    private selectedStars = 5;
 
     constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService) {
         this.conferenceId = Number(routeParams.get("conferenceId"));
@@ -33,6 +34,7 @@ export class RatingPage implements OnInit {
     }
     
     starSelected(starId: number) {
+        this.selectedStars = starId + 1;
         for (var index = 0; index < this.buttonActive.length; index++) {
             if( index <= starId ) {
                 this.buttonActive[index] = true;
@@ -44,5 +46,21 @@ export class RatingPage implements OnInit {
     
     saveInput() {
         console.log("save input");
+        
+        let starMessage = "Thanks for your rating with " + this.selectedStars + " stars";
+        let customerInput = ""
+        
+        if( this.customerRating !== "" ) {
+              customerInput = "And thanks for your Input! (" + this.customerRating + ")";
+        }
+        
+        let options = {
+            title: "Thanks for your rating",
+            message: starMessage + "\n" + customerInput,
+            okButtonText: "OK"
+        };
+        Dialog.alert(options).then(() => {
+            this.router.navigate(["Conferences"]);
+        });
     }
 }

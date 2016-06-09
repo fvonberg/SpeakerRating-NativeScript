@@ -25,4 +25,11 @@ export class TalksPage implements OnInit{
     showRating(talk: Talk) {
         this.router.navigate(["Rating", { conferenceId: talk.conferenceId, talkId: talk.id }]);
     }
+    
+    getImageSrcForItem(item: Talk): String {
+        if(item.imageUrl !== "") {
+            return item.imageUrl;
+        }
+        return "~/images/default_placeholder_image.png";
+    }
 }

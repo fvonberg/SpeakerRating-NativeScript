@@ -12,7 +12,7 @@
             <Label text="&#xf005;" (tap)="starSelected(4)" class="rating-button" [class.rating-button-active]="buttonActive[4]"></Label>
         </StackLayout>
         
-        <TextView hint="Whats your opinion?" ([ngModel])="customerRating"></TextView>
+        <TextView hint="Whats your opinion?" [(ngModel)]="customerRating"></TextView>
         
         <Button text="Rate!" (tap)="saveInput()" class="cardViewButton"></Button>
     </StackLayout>

@@ -22,4 +22,11 @@ export class ConferencesPage implements OnInit{
     showTalks(conference: Conference) {
         this.router.navigate(["Talks", { conferenceId: conference.id }]);
     }
+    
+    getImageSrcForItem(item: Conference): String {
+        if(item.imageUrl !== "") {
+            return item.imageUrl;
+        }
+        return "~/images/default_placeholder_image.png";
+    }
 }
