@@ -17,6 +17,7 @@ export class RatingPage implements OnInit {
     starStrings: Array<string> = ["&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;"];
     private conferenceId: number;
     private talkId: number;
+    buttonActive: Array<boolean> = [true, true, true, true, true];
 
     constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService) {
         this.conferenceId = Number(routeParams.get("conferenceId"));
@@ -32,12 +33,16 @@ export class RatingPage implements OnInit {
     }
     
     starSelected(starId: number) {
-        console.log("update stars");
-        // update rating and view
+        for (var index = 0; index < this.buttonActive.length; index++) {
+            if( index <= starId ) {
+                this.buttonActive[index] = true;
+            } else {
+                this.buttonActive[index] = false;
+            }
+        }
     }
     
     saveInput() {
-        // TODO:
         console.log("save input");
     }
 }

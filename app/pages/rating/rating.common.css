@@ -9,4 +9,9 @@
     color: #808080;
     font-size: 16;
     width: 40;
+    border: none;
+}
+
+.rating-button-active {
+    color: #ff9640;
 }
