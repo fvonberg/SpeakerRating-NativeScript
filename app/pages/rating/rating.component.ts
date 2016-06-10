@@ -14,7 +14,6 @@ export class RatingPage implements OnInit {
 
     customerRating: string = "";
     talk: Talk;
-    starStrings: Array<string> = ["&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;", "&#xf005;"];
     private conferenceId: number;
     private talkId: number;
     buttonActive: Array<boolean> = [true, true, true, true, true];
@@ -42,6 +41,13 @@ export class RatingPage implements OnInit {
                 this.buttonActive[index] = false;
             }
         }
+    }
+    
+    getImageSrcForItem(imageUrl: string): string {
+        if(imageUrl !== "") {
+            return imageUrl;
+        }
+        return "images/default_placeholder_image.png";
     }
     
     saveInput() {

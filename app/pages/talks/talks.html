@@ -3,7 +3,7 @@
     <ListView [items]="talkList">
         <template let-item="item">
             <StackLayout class="cardView">
-                <Image src="getImageSrcForItem(item)" class="cardViewImage"></Image>
+                <Image [src]="getImageSrcForItem(item)" class="cardViewImage"></Image>
                 <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
                 <Label class="cardViewItems cardViewAuthor" [text]="item.author"></Label>
                 <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>

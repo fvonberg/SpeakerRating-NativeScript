@@ -1,15 +1,11 @@
 <ScrollView>
     <StackLayout>
-        <Image src="~/images/default_placeholder_image.png" class="cardViewImage"></Image>
+        <Image [src]="getImageSrcForItem(talk?.imageUrl)" class="cardViewImage"></Image>
         <Label [text]="talk?.title" class="cardViewItems cardViewHeading"></Label>
         <Label [text]="talk?.author" class="cardViewItems cardViewContent"></Label>
     
         <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
-            <Label text="&#xf005;" (tap)="starSelected(0)" class="rating-button" [class.rating-button-active]="buttonActive[0]"></Label>
-            <Label text="&#xf005;" (tap)="starSelected(1)" class="rating-button" [class.rating-button-active]="buttonActive[1]"></Label>
-            <Label text="&#xf005;" (tap)="starSelected(2)" class="rating-button" [class.rating-button-active]="buttonActive[2]"></Label>
-            <Label text="&#xf005;" (tap)="starSelected(3)" class="rating-button" [class.rating-button-active]="buttonActive[3]"></Label>
-            <Label text="&#xf005;" (tap)="starSelected(4)" class="rating-button" [class.rating-button-active]="buttonActive[4]"></Label>
+            <Label *ngFor="#number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
         </StackLayout>
         
         <TextView hint="Whats your opinion?" [(ngModel)]="customerRating"></TextView>
