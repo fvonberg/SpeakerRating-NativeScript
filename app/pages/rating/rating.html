@@ -6,7 +6,7 @@
         <Label text="Ihre Bewertung:" class="cardViewItems cardViewContent"></Label>
     
         <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
-            <Label *ngFor="#number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
+            <Label *ngFor="let number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
         </StackLayout>
         
         <TextView hint="Der Talk war ..." [(ngModel)]="customerRating"></TextView>
