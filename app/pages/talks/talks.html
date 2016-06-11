@@ -5,9 +5,13 @@
             <StackLayout class="cardView">
                 <Image [src]="getImageSrcForItem(item)" class="cardViewImage"></Image>
                 <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
-                <Label class="cardViewItems cardViewAuthor" [text]="item.author"></Label>
+                <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
+                <StackLayout orientation="horizontal" class="font-awesome">
+                    <Label class="cardViewItems cardViewContent cardViewAuthor" [text]="'&#xf007; ' + item.author"></Label>
+                    <Label class="cardViewItems cardViewContent cardViewAuthor" [text]="'&#xf073; ' + item.presentationDate"></Label>
+                </StackLayout>
                 <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>
-                <Button class="cardViewItems cardViewButton" (tap)="showRating(item)" text="Rate this talk!"></Button>
+                <Button class="cardViewItems cardViewButton" (tap)="showRating(item)" text="TALK BEWERTEN"></Button>
             </StackLayout>
         </template>
     </ListView>

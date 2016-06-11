@@ -5,6 +5,7 @@ export class Talk {
         public imageUrl: string,
         public title: string,
         public description: string,
-        public author: string
+        public author: string,
+        public presentationDate: string
     ) {}
 }

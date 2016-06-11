@@ -22,12 +22,12 @@
 }
 
 .cardViewHeading {
-  font-size: 22;
+  font-size: 16;
   font-weight: bold;
 }
 
 .cardViewContent {
-  font-size: 14;
+  font-size: 12;
 }
 
 .cardViewButton {
@@ -36,4 +36,9 @@
 
 .font-awesome {
     font-family: fontawesome-webfont;
+}
+
+.horizontal-line {
+    height: 1;
+    background-color: #000000;
 }

@@ -9,7 +9,8 @@
                     "title": "JS goes Mobile - KA",
                     "author": "Frederik von Berg",
                     "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400"
+                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 1,
@@ -17,7 +18,8 @@
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - KA",
                     "author": "Philipp Burgmer",
                     "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400"
+                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 2,
@@ -25,7 +27,8 @@
                     "title": "Besseren Java-Code mit Type Annotations - KA",
                     "author": "Dragan Zuvic",
                     "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400"
+                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
         },
@@ -38,7 +41,8 @@
                     "title": "JS goes Mobile - NÜ",
                     "author": "Frederik von Berg",
                     "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400"
+                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 1,
@@ -46,7 +50,8 @@
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - NÜ",
                     "author": "Philipp Burgmer",
                     "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400"
+                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 2,
@@ -54,7 +59,8 @@
                     "title": "Besseren Java-Code mit Type Annotations - NÜ",
                     "author": "Dragan Zuvic",
                     "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400"
+                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
         },
@@ -67,7 +73,8 @@
                     "title": "JS goes Mobile - FRA",
                     "author": "Frederik von Berg",
                     "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400"
+                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 1,
@@ -75,7 +82,8 @@
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - FRA ",
                     "author": "Philipp Burgmer",
                     "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400"
+                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
                     "id": 2,
@@ -83,7 +91,8 @@
                     "title": "Besseren Java-Code mit Type Annotations - FRA",
                     "author": "Dragan Zuvic",
                     "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400"
+                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
         }

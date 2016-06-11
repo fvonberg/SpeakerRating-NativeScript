@@ -5,8 +5,9 @@
             <StackLayout class="cardView">
                 <Image [src]="getImageSrcForItem(item)" class="cardViewImage"></Image>
                 <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
+                <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
                 <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>
-                <Button class="cardViewItems cardViewButton" (tap)="showTalks(item)" text="TO TALK OVERVIEW!"></Button>
+                <Button class="cardViewItems cardViewButton" (tap)="showTalks(item)" text="ZU DEN TALKS"></Button>
             </StackLayout>
         </template>
     </ListView>

@@ -19,7 +19,7 @@ export class TalkService {
                         var conferenceParent = json.data[index];
                         if(conferenceParent.conferenceId === conferenceId) {
                             conferenceParent.talks.forEach(talk => {
-                                 allTalks.push(new Talk(talk.id, talk.conferenceId, talk.imageUrl, talk.title, talk.description, talk.author));
+                                 allTalks.push(new Talk(talk.id, talk.conferenceId, talk.imageUrl, talk.title, talk.description, talk.author, talk.presentationDate));
                             });
                             break;
                         }
@@ -46,7 +46,7 @@ export class TalkService {
                         if(conferenceParent.conferenceId === conferenceId) {
                             conferenceParent.talks.forEach(conferenceTalk => {
                                 if(conferenceTalk.id === talkId) {
-                                  talk = new Talk(conferenceTalk.id, conferenceTalk.conferenceId, conferenceTalk.imageUrl, conferenceTalk.title, conferenceTalk.description, conferenceTalk.author);
+                                  talk = new Talk(conferenceTalk.id, conferenceTalk.conferenceId, conferenceTalk.imageUrl, conferenceTalk.title, conferenceTalk.description, conferenceTalk.author, conferenceTalk.presentationDate);
                                 }
                             });
                             break;

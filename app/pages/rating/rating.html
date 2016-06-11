@@ -2,14 +2,15 @@
     <StackLayout>
         <Image [src]="getImageSrcForItem(talk?.imageUrl)" class="cardViewImage"></Image>
         <Label [text]="talk?.title" class="cardViewItems cardViewHeading"></Label>
-        <Label [text]="talk?.author" class="cardViewItems cardViewContent"></Label>
+        <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
+        <Label text="Ihre Bewertung:" class="cardViewItems cardViewContent"></Label>
     
         <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
             <Label *ngFor="#number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
         </StackLayout>
         
-        <TextView hint="Whats your opinion?" [(ngModel)]="customerRating"></TextView>
+        <TextView hint="Der Talk war ..." [(ngModel)]="customerRating"></TextView>
         
-        <Button text="Rate!" (tap)="saveInput()" class="cardViewButton"></Button>
+        <Button text="BEWERTUNG ABSCHICKEN" (tap)="saveInput()" class="cardViewButton"></Button>
     </StackLayout>
 </ScrollView>

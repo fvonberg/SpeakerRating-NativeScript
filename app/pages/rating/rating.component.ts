@@ -53,15 +53,15 @@ export class RatingPage implements OnInit {
     saveInput() {
         console.log("save input");
         
-        let starMessage = "Thanks for your rating with " + this.selectedStars + " stars";
+        let starMessage = "Vielen Dank für Ihre Bewertung mit " + this.selectedStars + " Sternen";
         let customerInput = ""
         
-        if( this.customerRating !== "" ) {
+ /*       if( this.customerRating !== "" ) {
               customerInput = "And thanks for your Input! (" + this.customerRating + ")";
-        }
+        }  */
         
         let options = {
-            title: "Thanks for your rating",
+            title: "Bewertung",
             message: starMessage + "\n" + customerInput,
             okButtonText: "OK"
         };
