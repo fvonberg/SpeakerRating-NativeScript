@@ -27,7 +27,7 @@ export class ConferencesPage implements OnInit{
     
     getImageSrcForItem(item: Conference): String {
         if(item.imageUrl !== "") {
-            return item.imageUrl;
+            return "~/images/" + item.imageUrl;
         }
         return "~/images/default_placeholder_image.png";
     }

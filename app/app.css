@@ -12,6 +12,7 @@
 
 .cardImage {
   border: none;
+  height: 150;
 }
 
 .cardContent {
