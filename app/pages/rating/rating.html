@@ -1,16 +1,18 @@
-<ScrollView>
-    <StackLayout>
-        <Image [src]="getImageSrcForItem(talk?.imageUrl)" class="cardViewImage"></Image>
-        <Label [text]="talk?.title" class="cardViewItems cardViewHeading"></Label>
-        <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
-        <Label text="Ihre Bewertung:" class="cardViewItems cardViewContent"></Label>
-    
-        <StackLayout orientation="horizontal" class="stars font-awesome cardViewContent">
-            <Label *ngFor="let number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
+<ScrollView class="bgColor">
+    <StackLayout class="card">
+        <Image [src]="getImageSrcForItem(talk?.imageUrl)" class="cardImage"></Image>
+        <StackLayout class="cardContent">
+            <Label [text]="talk?.title" class="cardContentItems cardContentHeading"></Label>
+            <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
+            <Label text="Ihre Bewertung:" class="cardContentItems"></Label>
+        
+            <StackLayout orientation="horizontal" class="stars font-awesome">
+                <Label *ngFor="let number of [0,1,2,3,4]" text="&#xf005;" (tap)="starSelected(number)" class="rating-button" [class.rating-button-active]="buttonActive[number]"></Label>
+            </StackLayout>
+            
+            <TextView hint="Der Talk war ..." [(ngModel)]="customerRating"></TextView>
+            
+            <Button text="BEWERTUNG ABSCHICKEN" (tap)="saveInput()" class="cardContentButton"></Button>
         </StackLayout>
-        
-        <TextView hint="Der Talk war ..." [(ngModel)]="customerRating"></TextView>
-        
-        <Button text="BEWERTUNG ABSCHICKEN" (tap)="saveInput()" class="cardViewButton"></Button>
     </StackLayout>
 </ScrollView>

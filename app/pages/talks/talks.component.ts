@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
-import {Router} from "@angular/router-deprecated";
-import {RouteParams} from "@angular/router-deprecated";
+import {Router, RouteParams} from "@angular/router-deprecated";
+import {Page} from "ui/page";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
 
@@ -13,11 +13,12 @@ export class TalksPage implements OnInit{
     talkList: Array<Talk> = [];
     conferenceId: number;
 
-    constructor(private talkService: TalkService, private router: Router, params: RouteParams) {
+    constructor(private talkService: TalkService, private router: Router, params: RouteParams, private page: Page) {
         this.conferenceId = Number(params.get('conferenceId'));
     }
 
     ngOnInit() {
+        this.page.actionBarHidden = true;
         this.talkService.getTalksForConference(this.conferenceId)
             .then(talks => this.talkList = talks);
     }

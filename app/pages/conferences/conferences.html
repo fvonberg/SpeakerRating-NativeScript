@@ -2,12 +2,14 @@
     
     <ListView [items]="conferenceList">
         <template let-item="item">
-            <StackLayout class="cardView">
-                <Image [src]="getImageSrcForItem(item)" class="cardViewImage"></Image>
-                <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
-                <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
-                <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>
-                <Button class="cardViewItems cardViewButton" (tap)="showTalks(item)" text="ZU DEN TALKS"></Button>
+            <StackLayout class="card">
+                <Image [src]="getImageSrcForItem(item)" class="cardImage"></Image>
+                <StackLayout class="cardContent">
+                    <Label class="cardContentItems cardContentHeading" [text]="item.title"></Label>
+                    <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
+                    <Label class="cardContentItems cardContentContent" [text]="item.description"></Label>
+                    <Button class="cardContentItems cardContentButton" (tap)="showTalks(item)" text="ZU DEN TALKS"></Button>
+                </StackLayout>
             </StackLayout>
         </template>
     </ListView>

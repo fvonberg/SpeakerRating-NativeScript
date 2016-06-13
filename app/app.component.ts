@@ -18,4 +18,4 @@ import {TalkService} from "./shared/talks/talk.service";
     { path: "/rating/:conferenceId/:talkId", component: RatingPage, name: "Rating" },
 ])
 export class AppComponent {
-}
+ }

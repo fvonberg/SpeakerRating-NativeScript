@@ -2,16 +2,18 @@
 
     <ListView [items]="talkList">
         <template let-item="item">
-            <StackLayout class="cardView">
-                <Image [src]="getImageSrcForItem(item)" class="cardViewImage"></Image>
-                <Label class="cardViewItems cardViewHeading" [text]="item.title"></Label>
-                <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
-                <StackLayout orientation="horizontal" class="font-awesome">
-                    <Label class="cardViewItems cardViewContent cardViewAuthor" [text]="'&#xf007; ' + item.author"></Label>
-                    <Label class="cardViewItems cardViewContent cardViewAuthor" [text]="'&#xf073; ' + item.presentationDate"></Label>
+            <StackLayout class="card">
+                <Image [src]="getImageSrcForItem(item)" class="cardImage"></Image>
+                <StackLayout class="cardContent">
+                    <Label class="cardContentItems cardContentHeading" [text]="item.title"></Label>
+                    <StackLayout class="horizontal-line" orientation="horizontal"></StackLayout>
+                    <StackLayout orientation="horizontal" class="font-awesome">
+                        <Label class="cardContentItems cardContentAuthor" [text]="'&#xf007; ' + item.author"></Label>
+                        <Label class="cardContentItems cardContentAuthor" [text]="'&#xf073; ' + item.presentationDate"></Label>
+                    </StackLayout>
+                    <Label class="cardContentItems" [text]="item.description"></Label>
+                    <Button class="cardContentItems cardContentButton" (tap)="showRating(item)" text="TALK BEWERTEN"></Button>
                 </StackLayout>
-                <Label class="cardViewItems cardViewContent" [text]="item.description"></Label>
-                <Button class="cardViewItems cardViewButton" (tap)="showRating(item)" text="TALK BEWERTEN"></Button>
             </StackLayout>
         </template>
     </ListView>

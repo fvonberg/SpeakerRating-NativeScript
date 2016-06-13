@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router-deprecated";
+import {Page} from "ui/page";
 import {ConferenceService} from "../../shared/conferences/conference.service";
 import {Conference} from "../../shared/conferences/conference";
 
@@ -12,9 +13,10 @@ import {Conference} from "../../shared/conferences/conference";
 export class ConferencesPage implements OnInit{
     conferenceList: Array<Conference> = [];
     
-    constructor(private conferenceService: ConferenceService, private router: Router) {}
+    constructor(private conferenceService: ConferenceService, private router: Router, private page: Page) {}
     
     ngOnInit() {
+        this.page.actionBarHidden = true;
         this.conferenceService.getAllConferences()
             .then(conferences => this.conferenceList = conferences);
     }

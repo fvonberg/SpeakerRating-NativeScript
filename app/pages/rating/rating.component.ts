@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router, RouteParams} from "@angular/router-deprecated";
+import {Page} from "ui/page";
 import {TextView} from "ui/text-view";
 import * as Dialog from "ui/dialogs";
 import {TalkService} from "../../shared/talks/talk.service";
@@ -19,12 +20,13 @@ export class RatingPage implements OnInit {
     buttonActive: Array<boolean> = [true, true, true, true, true];
     private selectedStars = 5;
 
-    constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService) {
+    constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService, private page: Page) {
         this.conferenceId = Number(routeParams.get("conferenceId"));
         this.talkId = Number(routeParams.get("talkId"));
     }
     
     ngOnInit() {
+       this.page.actionBarHidden = true;
        this.talkService.getTalk(this.conferenceId, this.talkId)
             .then(talk => {
                 this.talk = talk;
