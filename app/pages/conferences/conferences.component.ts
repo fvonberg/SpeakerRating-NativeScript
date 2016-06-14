@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router-deprecated";
 import {Page} from "ui/page";
+import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {ConferenceService} from "../../shared/conferences/conference.service";
 import {Conference} from "../../shared/conferences/conference";
 
@@ -25,10 +26,7 @@ export class ConferencesPage implements OnInit{
         this.router.navigate(["Talks", { conferenceId: conference.id }]);
     }
     
-    getImageSrcForItem(item: Conference): String {
-        if(item.imageUrl !== "") {
-            return "~/images/" + item.imageUrl;
-        }
-        return "~/images/default_placeholder_image.png";
+    getImageSrcForItem(item: Conference): string {
+        return ImageHelper.getImagePath(item.imageUrl);
     }
 }

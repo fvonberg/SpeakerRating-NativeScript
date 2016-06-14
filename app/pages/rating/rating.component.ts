@@ -3,6 +3,7 @@ import {Router, RouteParams} from "@angular/router-deprecated";
 import {Page} from "ui/page";
 import {TextView} from "ui/text-view";
 import * as Dialog from "ui/dialogs";
+import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
 
@@ -46,25 +47,18 @@ export class RatingPage implements OnInit {
     }
     
     getImageSrcForItem(imageUrl: string): string {
-        if(imageUrl !== "") {
-            return imageUrl;
-        }
-        return "images/default_placeholder_image.png";
+        return ImageHelper.getImagePath(imageUrl);
     }
     
     saveInput() {
-        console.log("save input");
         
         let starMessage = "Vielen Dank für Ihre Bewertung mit " + this.selectedStars + " Sternen";
-        let customerInput = ""
         
- /*       if( this.customerRating !== "" ) {
-              customerInput = "And thanks for your Input! (" + this.customerRating + ")";
-        }  */
+        console.log("textField: " + this.customerRating);
         
         let options = {
             title: "Bewertung",
-            message: starMessage + "\n" + customerInput,
+            message: starMessage,
             okButtonText: "OK"
         };
         Dialog.alert(options).then(() => {

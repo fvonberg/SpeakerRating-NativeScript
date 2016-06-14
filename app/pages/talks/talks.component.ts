@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Router, RouteParams} from "@angular/router-deprecated";
 import {Page} from "ui/page";
+import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
 
@@ -28,9 +29,6 @@ export class TalksPage implements OnInit{
     }
     
     getImageSrcForItem(item: Talk): String {
-        if(item.imageUrl !== "") {
-            return item.imageUrl;
-        }
-        return "~/images/default_placeholder_image.png";
+        return ImageHelper.getImagePath(item.imageUrl);
     }
 }

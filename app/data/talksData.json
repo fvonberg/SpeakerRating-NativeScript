@@ -8,8 +8,8 @@
                     "conferenceId": 0,
                     "title": "JS goes Mobile - KA",
                     "author": "Frederik von Berg",
-                    "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "description": "Mit Apache Cordova (ehem. PhoneGap) gibt es seit 2009 die Möglichkeit mobile Anwendungen mit JavaScript zu schreiben, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -17,8 +17,8 @@
                     "conferenceId": 0,
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - KA",
                     "author": "Philipp Burgmer",
-                    "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "description": "Sicherheit in Web-Anwendungen ist ein alter Hut. Dazu hat jeder Entwickler schon genug Artikel gelesen und Vorträge gehört.",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -26,8 +26,8 @@
                     "conferenceId": 0,
                     "title": "Besseren Java-Code mit Type Annotations - KA",
                     "author": "Dragan Zuvic",
-                    "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "description": "Type-Annotations nach JSR-308 sind Bestandteil von Java 8. Es scheint aber, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
@@ -40,8 +40,8 @@
                     "conferenceId": 1,
                     "title": "JS goes Mobile - NÜ",
                     "author": "Frederik von Berg",
-                    "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "description": "Mit Apache Cordova (ehem. PhoneGap) gibt es seit 2009 die Möglichkeit mobile Anwendungen mit JavaScript zu schreiben, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -49,8 +49,8 @@
                     "conferenceId": 1,
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - NÜ",
                     "author": "Philipp Burgmer",
-                    "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "description": "Sicherheit in Web-Anwendungen ist ein alter Hut. Dazu hat jeder Entwickler schon genug Artikel gelesen und Vorträge gehört.",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -58,8 +58,8 @@
                     "conferenceId": 1,
                     "title": "Besseren Java-Code mit Type Annotations - NÜ",
                     "author": "Dragan Zuvic",
-                    "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "description": "Type-Annotations nach JSR-308 sind Bestandteil von Java 8. Es scheint aber, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
@@ -72,8 +72,8 @@
                     "conferenceId": 2,
                     "title": "JS goes Mobile - FRA",
                     "author": "Frederik von Berg",
-                    "description": "Super Talk, Super Zeugs",
-                    "imageUrl": "https://placekitten.com/g/800/400",
+                    "description": "Mit Apache Cordova (ehem. PhoneGap) gibt es seit 2009 die Möglichkeit mobile Anwendungen mit JavaScript zu schreiben, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -81,8 +81,8 @@
                     "conferenceId": 2,
                     "title": "Don't be the next AshleyMadison: Penetrationstests für Entwickler - FRA ",
                     "author": "Philipp Burgmer",
-                    "description": "Safety First",
-                    "imageUrl": "https://placekitten.com/g/900/400",
+                    "description": "Sicherheit in Web-Anwendungen ist ein alter Hut. Dazu hat jeder Entwickler schon genug Artikel gelesen und Vorträge gehört.",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 },
                 {
@@ -90,8 +90,8 @@
                     "conferenceId": 2,
                     "title": "Besseren Java-Code mit Type Annotations - FRA",
                     "author": "Dragan Zuvic",
-                    "description": "Old, but gold",
-                    "imageUrl": "https://placekitten.com/g/600/400",
+                    "description": "Type-Annotations nach JSR-308 sind Bestandteil von Java 8. Es scheint aber, ...",
+                    "imageUrl": "talkHeader.png",
                     "presentationDate": "15:45 - 15.06.2016"
                 }
             ]
