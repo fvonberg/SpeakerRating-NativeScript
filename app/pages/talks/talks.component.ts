@@ -4,9 +4,11 @@ import {Page} from "ui/page";
 import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
+import {CustomActionBar} from "../customActionBar/customActionBar.component";
 
 @Component({
     selector: "talks",
+    directives: [CustomActionBar],
     templateUrl: "pages/talks/talks.html",
     styleUrls: ["pages/talks/talks.common.css"]
 })
@@ -18,7 +20,6 @@ export class TalksPage implements OnInit{
         this._zone.run(() => {
             this._route.params.subscribe(params => {
                 let conferenceId = +params["conferenceId"];
-                console.log(conferenceId);
                 this.talkService.getTalksForConference(conferenceId)
                     .then(talks => this.talkList = talks);
             });

@@ -4,10 +4,12 @@ import {Page} from "ui/page";
 import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {ConferenceService} from "../../shared/conferences/conference.service";
 import {Conference} from "../../shared/conferences/conference";
+import {CustomActionBar} from "../customActionBar/customActionBar.component";
 
 @Component({
     selector: "conferences",
     providers: [ConferenceService],
+    directives: [CustomActionBar],
     templateUrl: "pages/conferences/conferences.html",
     styleUrls: ["pages/conferences/conferences.common.css"]
 })

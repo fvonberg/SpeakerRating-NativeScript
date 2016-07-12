@@ -1,5 +1,7 @@
 <StackLayout class="bgColor">
-    
+
+    <CustomActionBar [activeBackLink]="false"></CustomActionBar>
+
     <ListView [items]="conferenceList" separatorColor="#dfdfdf">
         <template let-item="item">
             <StackLayout class="card">

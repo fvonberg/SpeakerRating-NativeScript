@@ -5,9 +5,11 @@ import * as Dialog from "ui/dialogs";
 import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
 import {Talk} from "../../shared/talks/talk";
+import {CustomActionBar} from "../customActionBar/customActionBar.component";
 
 @Component({
     selector: "rating",
+    directives: [CustomActionBar],
     templateUrl: "pages/rating/rating.html",
     styleUrls: ["pages/rating/rating.common.css"]
 })
