@@ -2,6 +2,10 @@
   background-color: #dfdfdf;  
 }
 
+ListView {
+  height: 100%;
+}
+
 .card {
   padding-left: 20;
   padding-right: 20;
@@ -37,7 +41,7 @@
 }
 
 .font-awesome {
-    font-family: fontawesome-webfont;
+    font-family: 'FontAwesome', fontawesome-webfont;
 }
 
 .horizontal-line {
