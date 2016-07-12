@@ -1,7 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {Router, RouteParams} from "@angular/router-deprecated";
+import {Component, OnInit, NgZone} from "@angular/core";
+import {Router, ActivatedRoute} from "@angular/router";
 import {Page} from "ui/page";
-import {TextView} from "ui/text-view";
 import * as Dialog from "ui/dialogs";
 import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
@@ -16,23 +15,25 @@ export class RatingPage implements OnInit {
 
     customerRating: string = "";
     talk: Talk;
-    private conferenceId: number;
-    private talkId: number;
     buttonActive: Array<boolean> = [true, true, true, true, true];
     private selectedStars = 5;
 
-    constructor(private router: Router, private routeParams: RouteParams, private talkService: TalkService, private page: Page) {
-        this.conferenceId = Number(routeParams.get("conferenceId"));
-        this.talkId = Number(routeParams.get("talkId"));
+    constructor(private _router: Router, private _route: ActivatedRoute, private talkService: TalkService, private _page: Page, private _zone: NgZone) {
+        this._page.actionBarHidden = true;
+        this._zone.run(() => {
+            this._route.params.subscribe(params => {
+                let conferenceId = +params["conferenceId"];
+                let talkId = +params["talkId"];
+                this.talkService.getTalk(conferenceId, talkId)
+                    .then(talk => {
+                        this.talk = talk;
+                    });
+            });
+        });
     }
     
     ngOnInit() {
-       this.page.actionBarHidden = true;
-       this.talkService.getTalk(this.conferenceId, this.talkId)
-            .then(talk => {
-                this.talk = talk;
-            });
-       
+        // does not work with this setup
     }
     
     starSelected(starId: number) {
@@ -54,15 +55,13 @@ export class RatingPage implements OnInit {
         
         let starMessage = "Vielen Dank für Ihre Bewertung mit " + this.selectedStars + " Sternen";
         
-        console.log("textField: " + this.customerRating);
-        
         let options = {
             title: "Bewertung",
             message: starMessage,
             okButtonText: "OK"
         };
         Dialog.alert(options).then(() => {
-            this.router.navigate(["Conferences"]);
+            this._router.navigate(["/"]);
         });
     }
 }

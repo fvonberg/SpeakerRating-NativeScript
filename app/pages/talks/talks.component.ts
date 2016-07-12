@@ -1,5 +1,5 @@
-import {Component, OnInit} from "@angular/core";
-import {Router, RouteParams} from "@angular/router-deprecated";
+import {Component, OnInit, NgZone} from "@angular/core";
+import {Router, ActivatedRoute} from "@angular/router";
 import {Page} from "ui/page";
 import {ImageHelper} from "../../shared/helpers/ImageHelper";
 import {TalkService} from "../../shared/talks/talk.service";
@@ -12,20 +12,25 @@ import {Talk} from "../../shared/talks/talk";
 })
 export class TalksPage implements OnInit{
     talkList: Array<Talk> = [];
-    conferenceId: number;
 
-    constructor(private talkService: TalkService, private router: Router, params: RouteParams, private page: Page) {
-        this.conferenceId = Number(params.get('conferenceId'));
+    constructor(private talkService: TalkService, private _router: Router, private _route: ActivatedRoute, private _page: Page, private _zone: NgZone) {
+        this._page.actionBarHidden = true;
+        this._zone.run(() => {
+            this._route.params.subscribe(params => {
+                let conferenceId = +params["conferenceId"];
+                console.log(conferenceId);
+                this.talkService.getTalksForConference(conferenceId)
+                    .then(talks => this.talkList = talks);
+            });
+        });
     }
 
     ngOnInit() {
-        this.page.actionBarHidden = true;
-        this.talkService.getTalksForConference(this.conferenceId)
-            .then(talks => this.talkList = talks);
+        // does not work with this setup
     }
 
     showRating(talk: Talk) {
-        this.router.navigate(["Rating", { conferenceId: talk.conferenceId, talkId: talk.id }]);
+        this._router.navigate(["/rating", talk.conferenceId, talk.id]);
     }
     
     getImageSrcForItem(item: Talk): String {
